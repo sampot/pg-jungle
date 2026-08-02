@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="華語圈懷舊鬥獸棋：獸穴、陷阱、河界跳躍、人機對戰。純前端 Playgrounds SAM。"
+    />
+    <title>鬥獸棋</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <h1>鬥獸棋</h1>
+        <p class="tagline">獸穴陷阱 · 河界跳躍 · 純娛樂</p>
+      </header>
+
+      <section class="meter" aria-label="對局狀態">
+        <div class="meter-item">
+          <span class="label">你</span>
+          <strong>紅</strong>
+        </div>
+        <div class="meter-item">
+          <span class="label">剩餘 你/電腦</span>
+          <strong id="remain">8/8</strong>
+        </div>
+        <div class="meter-actions">
+          <button type="button" id="btn-mute" class="secondary" aria-pressed="true">
+            音效開
+          </button>
+        </div>
+      </section>
+
+      <div class="stage">
+        <canvas
+          id="game"
+          width="480"
+          height="640"
+          role="img"
+          aria-label="鬥獸棋棋盤"
+        ></canvas>
+      </div>
+
+      <p id="status" class="status" role="status">點己方獸棋，再點目標格</p>
+
+      <div class="controls">
+        <button type="button" id="btn-reset" class="secondary">新局</button>
+      </div>
+
+      <p class="hint">
+        大吃小；鼠可吃象、象不能吃鼠。只有鼠能下水；獅／虎可跳河（河中無鼠）。攻入對方獸穴或吃光即勝。陷阱中的敵獸可被任意己方吃掉。
+      </p>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
